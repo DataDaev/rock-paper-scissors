@@ -13,13 +13,20 @@ let playRound = (playerSelection, computerSelection) => {
     (playerSelection === "rock" && computerSelection === "scissors") ? console.log("You win! Scissors beats rock!") :
     (playerSelection === "paper" && computerSelection === "scissors") ? console.log("You lose! Scissors beats paper!") :
     (playerSelection === "scissors" && computerSelection === "rock") ? console.log("You lose! Rock beats scissors!") :
-    console.log("Please choose rock, paper, or scissors.")
+    console.log("Please choose rock, paper, or scissors.");
 
 }
-const input = "Scissors";
-const playerSelection = input.toLowerCase();
-console.log(playerSelection);
-const computerSelection = getComputerChoice().toLowerCase();
-console.log(computerSelection);
 
-playRound(playerSelection, computerSelection);
+
+
+let game = () => {
+    for (let i = 0; i < 5; i++) {
+        const playerSelection = prompt("Please choose rock, paper, or scissors").toLowerCase();
+        console.log(playerSelection);
+        const computerSelection = getComputerChoice().toLowerCase();
+        console.log(computerSelection);
+        playRound(playerSelection, computerSelection);
+    }
+}
+
+game();
