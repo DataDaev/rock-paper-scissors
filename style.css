@@ -5,7 +5,8 @@ body{
 }
 
 header {
-    font-size: 62px;
+    font-size: 70px;
+    font-weight: 700;
     color: white;
     display: flex;
     justify-content: center;
@@ -14,7 +15,81 @@ header {
     padding: 30px 0px;
 }
 
+h1 {
+    color: white;
+    font-size: 42px;
+}
+
+button {
+    transition-duration: 0.2s;
+    transform: matrix(1, 0, 0, 1, 0, 0);
+}
+
 .intro {
     color: white;
     text-align: center;
+}
+
+.choice {
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+    margin: 50px 0;
+}
+
+.rockButton, .paperButton, .scissorsButton {
+    background-color: #47579a;
+    border: 3px white solid;
+    border-radius: 10px;
+}
+
+.rock, .paper, .scissors {
+    width: 150px;
+    height: 150px;
+    padding: 10px;
+    background-color: #47579a;
+}
+
+.gameScores {
+    display: flex;
+    justify-content: center;
+    gap: 130px;
+    padding-left: 60px;
+    margin-bottom: 50px;
+}
+
+.scores {
+    font-size: 55px;
+    color: white;
+    text-align: center;
+    margin: 0;
+}
+
+.resetContainer {
+    display: flex;
+    justify-content: center;
+}
+
+.resetButton {
+    width: 120px;
+    height: 60px;
+    font-size: 20px;
+    font-weight: 700;
+    background-color: white;
+    border: 3px solid black;
+    border-radius: 10px;
+}
+
+.rockButton:hover, .paperButton:hover, .scissorsButton:hover {
+    box-shadow: 0px 0px 20px white;
+}
+
+.rockButton:active, .paperButton:active, .scissorsButton:active, .resetButton:active {
+    transform: matrix(0.95, 0, 0, 0.95, 0, 0);
+}
+
+.resetButton:hover {
+    background-color: #47579a;
+    border: 3px solid white;
+    color: white;
 }
