@@ -37,7 +37,7 @@ button {
     margin: 50px 0;
 }
 
-.rockButton, .paperButton, .scissorsButton {
+#rockButton, #paperButton, #scissorsButton {
     background-color: #47579a;
     border: 3px white solid;
     border-radius: 10px;
@@ -58,7 +58,7 @@ button {
     margin-bottom: 50px;
 }
 
-.scores {
+#playerScore, #computerScore {
     font-size: 55px;
     color: white;
     text-align: center;
@@ -70,7 +70,7 @@ button {
     justify-content: center;
 }
 
-.resetButton {
+#resetButton {
     width: 120px;
     height: 60px;
     font-size: 20px;
@@ -80,15 +80,15 @@ button {
     border-radius: 10px;
 }
 
-.rockButton:hover, .paperButton:hover, .scissorsButton:hover {
+#rockButton:hover, #paperButton:hover, #scissorsButton:hover {
     box-shadow: 0px 0px 20px white;
 }
 
-.rockButton:active, .paperButton:active, .scissorsButton:active, .resetButton:active {
+#rockButton:active, #paperButton:active, #scissorsButton:active, #resetButton:active {
     transform: matrix(0.95, 0, 0, 0.95, 0, 0);
 }
 
-.resetButton:hover {
+#resetButton:hover {
     background-color: #47579a;
     border: 3px solid white;
     color: white;

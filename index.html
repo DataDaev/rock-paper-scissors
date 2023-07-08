@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <script src="javascript.js"></script> -->
+    <script src="javascript.js" defer></script>
     <link rel="stylesheet" href="style.css">
     <title>Document</title>
 </head>
@@ -14,24 +14,24 @@
     <h1 class="intro">Battle with the computer! First to 5 wins!</h1>
 
     <div class="choice">
-        <button class="rockButton"><img class="rock" src="images/rock.png" alt="rock"></button>
-        <button class="paperButton"><img class="paper" src="images/paper.png" alt="paper"></button>
-        <button class="scissorsButton"><img class="scissors" src="images/scissors.png" alt="scissors"></button>
+        <button id="rockButton"><img class="rock" src="images/rock.png" alt="rock"></button>
+        <button id="paperButton"><img class="paper" src="images/paper.png" alt="paper"></button>
+        <button id="scissorsButton"><img class="scissors" src="images/scissors.png" alt="scissors"></button>
     </div>
 
     <div class="gameScores">
-        <div class="playerScore">
+        <div>
             <h1>You</h1>
-            <p class="scores">0</p>
+            <p id="playerScore">0</p>
         </div>
-        <div class="computerScore">
+        <div>
             <h1>Computer</h1>
-            <p class="scores">0</p>
+            <p id="computerScore">0</p>
         </div>
     </div>
 
     <div class="resetContainer">
-        <button class="resetButton">Reset</button>
+        <button id="resetButton">Reset</button>
     </div>
 </body>
 </html>
