@@ -28,6 +28,29 @@ button {
 .intro {
     color: white;
     text-align: center;
+    margin-bottom: 70px;
+}
+
+.battle {
+    position: relative;
+}
+
+.playerResult {
+    display: flex;
+    justify-content: center;
+    margin-right: 400px;
+}
+
+.computerResult {
+    display: flex;
+    justify-content: center;
+    margin-left: 400px;
+}
+
+.result {
+    position: absolute;
+    width: 150px;
+    height: 150px; 
 }
 
 .choice {
@@ -53,8 +76,9 @@ button {
 .gameScores {
     display: flex;
     justify-content: center;
-    gap: 130px;
+    gap: 280px;
     padding-left: 60px;
+    margin-top: 200px;
     margin-bottom: 50px;
 }
 

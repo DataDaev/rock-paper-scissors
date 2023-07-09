@@ -28,19 +28,40 @@ let playRound = (playerSelection, computerSelection) => {
         } 
 }
 
-const increasePlayerScore = () => {
-    let playerScore = document.getElementById("playerScore");
-    let score = parseInt(playerScore.textContent);
-    score++;
-    playerScore.textContent = score;
-    setTimeout(() => {
-        if (score === 5){
-            document.getElementById("rockButton").disabled = true;
-            document.getElementById("paperButton").disabled = true;
-            document.getElementById("scissorsButton").disabled = true;
-            alert("Congratulations! You beat the computer!");
-        }
-    }, 1);
+const result = (playerSelection, computerSelection) => {
+    if (playerSelection === "rock") {
+        document.getElementById("playerRock").style.visibility = "visible";
+        document.getElementById("playerPaper").style.visibility = "hidden";
+        document.getElementById("playerScissors").style.visibility = "hidden";
+    } else if (playerSelection === "paper") {
+        document.getElementById("playerRock").style.visibility = "hidden";
+        document.getElementById("playerPaper").style.visibility = "visible";
+        document.getElementById("playerScissors").style.visibility = "hidden";
+    } else if (playerSelection === "scissors") {
+        document.getElementById("playerRock").style.visibility = "hidden";
+        document.getElementById("playerPaper").style.visibility = "hidden";
+        document.getElementById("playerScissors").style.visibility = "visible";
+    }
+
+    if (computerSelection === "rock") {
+        document.getElementById("computerRock").style.visibility = "visible";
+        document.getElementById("computerPaper").style.visibility = "hidden";
+        document.getElementById("computerScissors").style.visibility = "hidden";
+    } else if (computerSelection === "paper") {
+        document.getElementById("computerRock").style.visibility = "hidden";
+        document.getElementById("computerPaper").style.visibility = "visible";
+        document.getElementById("computerScissors").style.visibility = "hidden";
+    } else if (computerSelection === "scissors") {
+        document.getElementById("computerRock").style.visibility = "hidden";
+        document.getElementById("computerPaper").style.visibility = "hidden";
+        document.getElementById("computerScissors").style.visibility = "visible";
+    }
+}
+
+const disableButtons = () => {
+    document.getElementById("rockButton").disabled = true;
+    document.getElementById("paperButton").disabled = true;
+    document.getElementById("scissorsButton").disabled = true;
 }
 
 const increaseComputerScore = () => {
@@ -55,15 +76,22 @@ const increaseComputerScore = () => {
             document.getElementById("scissorsButton").disabled = true;
             alert("Game over! The computer beat you!");
         }
-    }, 1);
-
-    
+    }, 10);
 }
 
-const disableButtons = () => {
-    document.getElementById("rockButton").disabled = true;
-    document.getElementById("paperButton").disabled = true;
-    document.getElementById("scissorsButton").disabled = true;
+const increasePlayerScore = () => {
+    let playerScore = document.getElementById("playerScore");
+    let score = parseInt(playerScore.textContent);
+    score++;
+    playerScore.textContent = score;
+    setTimeout(() => {
+        if (score === 5){
+            document.getElementById("rockButton").disabled = true;
+            document.getElementById("paperButton").disabled = true;
+            document.getElementById("scissorsButton").disabled = true;
+            alert("Congratulations! You beat the computer!");
+        }
+    }, 10);
 }
 
 const resetGame = () => {
@@ -78,10 +106,44 @@ const resetGame = () => {
     document.getElementById("rockButton").disabled = false;
     document.getElementById("paperButton").disabled = false;
     document.getElementById("scissorsButton").disabled = false;
+    document.getElementById("playerRock").style.visibility = "hidden";
+    document.getElementById("playerPaper").style.visibility = "hidden";
+    document.getElementById("playerScissors").style.visibility = "hidden";
+    document.getElementById("computerRock").style.visibility = "hidden";
+    document.getElementById("computerPaper").style.visibility = "hidden";
+    document.getElementById("computerScissors").style.visibility = "hidden";
 }
 
-const rock = document.getElementById("rockButton").addEventListener("click", () => playRound('rock', getComputerChoice()));
-const paper = document.getElementById("paperButton").addEventListener("click", () => playRound('paper', getComputerChoice()));
-const scissors = document.getElementById("scissorsButton").addEventListener("click", () => playRound('scissors', getComputerChoice()));
+
+const rockChoice = (computerSelection) => {
+    playRound('rock', computerSelection);
+    result('rock', computerSelection);
+}
+
+const paperChoice = (computerSelection) => {
+    playRound('paper', computerSelection);
+    result('paper', computerSelection);
+}
+
+const scissorsChoice = (computerSelection) => {
+    playRound('scissors', computerSelection);
+    result('scissors', computerSelection);
+}
+
+const rock = document.getElementById("rockButton").addEventListener("click", () => rockChoice(getComputerChoice()));
+
+const paper = document.getElementById("paperButton").addEventListener("click", () => paperChoice(getComputerChoice()));
+
+const scissors = document.getElementById("scissorsButton").addEventListener("click", () => scissorsChoice(getComputerChoice()));
+
 const reset = document.getElementById("resetButton").addEventListener("click", () => resetGame());
+
+document.getElementById("playerRock").style.visibility = "hidden";
+document.getElementById("playerPaper").style.visibility = "hidden";
+document.getElementById("playerScissors").style.visibility = "hidden";
+document.getElementById("computerRock").style.visibility = "hidden";
+document.getElementById("computerPaper").style.visibility = "hidden";
+document.getElementById("computerScissors").style.visibility = "hidden";
+
+
 
