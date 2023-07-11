@@ -24,6 +24,11 @@
             <img id="computerPaper" class="result" src="images/paper.png" alt="paper">
             <img id="computerScissors" class="result" src="images/scissors.png" alt="scissors">
         </div>
+        <div class="battleResult">
+            <h1 id="battleWin" class="result">You win!</h1>
+            <h1 id="battleLose" class="result">You lose!</h1>
+            <h1 id="battleTie" class="result">Tie!</h1>
+        </div>
     </div>
 
     <div class="gameScores">
@@ -43,9 +48,13 @@
         <button id="scissorsButton"><img class="scissors" src="images/scissors.png" alt="scissors"></button>
     </div>
 
-
-    <div class="resetContainer">
-        <button id="resetButton">Reset</button>
+    <div class="modal" id="modal">
+        <div class="modalContent">
+            <div class="title">Play Again?</div>
+            <button id="play">Play</button>
+        </div>
     </div>
+    <div id="overlay"></div>
+
 </body>
 </html>
