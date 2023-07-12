@@ -80,6 +80,7 @@ const increaseComputerScore = () => {
     computerScore.textContent = score;
     setTimeout(() => {
         if (score === 5){
+            document.getElementById("modalLose").style.visibility = "visible";
             endGame();
         }
     }, 10);
@@ -92,6 +93,7 @@ const increasePlayerScore = () => {
     playerScore.textContent = score;
     setTimeout(() => {
         if (score === 5){
+            document.getElementById("modalWin").style.visibility = "visible";
             endGame();
         }
     }, 10);
@@ -121,21 +123,26 @@ const hideResult = () => {
     }
 }
 
+const hideModalResult = () => {
+    const result = document.querySelectorAll('')
+}
+
 function endGame(button) {
     const modal = document.querySelector("#modal");
     openModal(modal);
 }
 
 function openModal(modal) {
-if (modal == null) return
-modal.classList.add('active');
-overlay.classList.add('active');
+    if (modal == null) return
+    modal.classList.add('active');
+    overlay.classList.add('active');
+
 }
 
 function closeModal(modal) {
-if (modal == null) return
-modal.classList.remove('active');
-overlay.classList.remove('active');
+    if (modal == null) return
+    modal.classList.remove('active');
+    overlay.classList.remove('active');
 }
 
 const rockChoice = (computerSelection) => {
@@ -162,15 +169,6 @@ const openGameModal = document.querySelector("#modal");
 const closeModalButton = document.querySelector("#play");
 const overlay = document.getElementById("overlay");
 
-// document.getElementById("playerRock").style.visibility = "hidden";
-// document.getElementById("playerPaper").style.visibility = "hidden";
-// document.getElementById("playerScissors").style.visibility = "hidden";
-// document.getElementById("computerRock").style.visibility = "hidden";
-// document.getElementById("computerPaper").style.visibility = "hidden";
-// document.getElementById("computerScissors").style.visibility = "hidden";
-// document.getElementById("battleWin").style.visibility = "hidden";
-// document.getElementById("battleLose").style.visibility = "hidden";
-// document.getElementById("battleTie").style.visibility = "hidden";
 
 
 
