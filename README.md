@@ -1,6 +1,7 @@
 # Rock Paper Scissors Website
 
 Play rock paper scissors and see if you win!
+Try me: https://datadaev.github.io/rock-paper-scissors/
 
 # Website Walkthrough
 
